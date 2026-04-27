@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  /* Dasar Deep Ocean */
+  --color-deep-bg: #020617;     /* Navy Super Gelap */
+  --color-deep-surface: #0f172a; /* Slate Gelap untuk Card/Header */
+  --color-sync-teal: #14b8a6;    /* Teal Utama untuk Tombol/Logo */
+  --color-sync-emerald: #10b981; /* Emerald untuk Tag/Detail */
+}
+
+@layer base {
+  html, body {
+    background-color: var(--color-deep-bg);
+    color: #94a3b8; /* Slate 400 - Teks Body */
+    @apply antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #f8fafc; /* Slate 50 - Teks Judul */
+    @apply tracking-tight;
+  }
+}
+
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(400px); } /* Sesuaikan dengan tinggi box lo */
+}
+
+.animate-scan {
+  animation: scan 4s linear infinite;
+}
