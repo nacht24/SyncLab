@@ -19,13 +19,6 @@ export default function Home() {
           "A digital innovation hub that synchronizes complex business ideas into seamless, high-performance software and high-fidelity design."
         </p>
 
-<<<<<<< HEAD
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
-          <button className="bg-sync-teal text-slate-950 px-8 py-3.5 rounded-lg font-bold text-base md:text-lg transition-all hover:opacity-90 hover:shadow-[0_0_30px_rgba(20,184,166,0.3)]">
-            Get Started
-          </button>
-          <button className="border border-slate-700 text-slate-50 px-8 py-3.5 rounded-lg font-bold text-base md:text-lg hover:bg-slate-800/50 transition-all">
-=======
         <div className="flex gap-4">
           <Link 
             href="/contact" 
@@ -38,7 +31,6 @@ export default function Home() {
             href="/about" 
             className="border border-slate-700 text-slate-50 px-8 py-3.5 rounded-lg font-bold text-lg hover:bg-slate-800/50 transition-all inline-block text-center"
           >
->>>>>>> 3162d8497c289f7f08c81a39cce03128af7ce916
             Learn More
           </Link>
         </div>
