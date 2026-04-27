@@ -3,31 +3,31 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <div className="max-w-6xl mx-auto py-24 px-6 relative">
+    <div className="max-w-6xl mx-auto py-16 md:py-24 px-4 sm:px-6 relative">
       
       {/* Background Glow Effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-sync-teal/5 blur-[120px] rounded-[100%] pointer-events-none"></div>
 
       {/* HEADER SECTION */}
-      <div className="text-center mb-20 relative z-10">
+      <div className="text-center mb-12 md:mb-20 relative z-10">
         <span className="text-sync-emerald text-xs font-bold uppercase tracking-[0.3em] mb-4 block">
           Connection Portal
         </span>
-        <h1 className="text-5xl font-black mb-6 text-slate-50">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 md:mb-6 text-slate-50">
           Initiate <span className="text-sync-teal">Synchronization.</span>
         </h1>
-        <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           Siap untuk mengeksekusi ide Anda? Kirimkan parameter proyek Anda ke dalam sistem kami, dan tim lab akan merespons dengan cetak biru yang tepat.
         </p>
       </div>
 
       {/* MAIN CONTENT GRID */}
-      <div className="grid lg:grid-cols-5 gap-12 items-start relative z-10">
+      <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start relative z-10">
         
-        {/* KOLOM KIRI: LAB INFO (2 Kolom) */}
-        <div className="lg:col-span-2 space-y-6">
+        {/* KOLOM KIRI: LAB INFO */}
+        <div className="lg:col-span-2 space-y-4 sm:space-y-6">
           {/* Info Card 1: Koordinat & Lokasi */}
-          <div className="p-8 bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-2xl relative overflow-hidden group hover:border-sync-teal/30 transition-colors">
+          <div className="p-6 sm:p-8 bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-2xl relative overflow-hidden group hover:border-sync-teal/30 transition-colors">
             <div className="absolute top-0 left-0 w-1 h-full bg-sync-teal/20 group-hover:bg-sync-teal transition-colors"></div>
             <h3 className="text-slate-500 text-xs font-mono mb-2 uppercase tracking-widest">Lab_Location</h3>
             <p className="text-xl font-bold text-slate-100 mb-4">Serang Sector, Banten</p>
@@ -39,7 +39,7 @@ export default function Contact() {
           </div>
 
           {/* Info Card 2: Direct Comms */}
-          <div className="p-8 bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-2xl relative overflow-hidden group hover:border-sync-emerald/30 transition-colors">
+          <div className="p-6 sm:p-8 bg-slate-900/50 backdrop-blur-sm border border-slate-800/50 rounded-2xl relative overflow-hidden group hover:border-sync-emerald/30 transition-colors">
             <div className="absolute top-0 left-0 w-1 h-full bg-sync-emerald/20 group-hover:bg-sync-emerald transition-colors"></div>
             <h3 className="text-slate-500 text-xs font-mono mb-2 uppercase tracking-widest">Direct_Comms</h3>
             <div className="space-y-4 mt-4">
@@ -59,8 +59,8 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* KOLOM KANAN: TRANSMISSION FORM (3 Kolom) */}
-        <div className="lg:col-span-3 bg-[#020617] rounded-3xl border border-slate-800/70 p-8 md:p-12 shadow-2xl relative overflow-hidden group/form">
+        {/* KOLOM KANAN: TRANSMISSION FORM */}
+        <div className="lg:col-span-3 bg-[#020617] rounded-3xl border border-slate-800/70 p-6 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden group/form">
           {/* Dekorasi Terminal Form */}
           <div className="absolute top-0 right-8 px-4 py-1 bg-sync-teal/10 rounded-b-lg border-x border-b border-sync-teal/20 flex gap-2 items-center">
             <div className="w-2 h-2 rounded-full bg-sync-teal animate-pulse"></div>
@@ -68,7 +68,7 @@ export default function Contact() {
           </div>
 
           <form className="space-y-6 mt-4">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
               {/* Input: Name */}
               <div className="space-y-2">
                 <label className="text-[11px] font-mono text-slate-500 uppercase tracking-widest">Client_ID [Name]</label>
