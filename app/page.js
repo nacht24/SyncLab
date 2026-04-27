@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     /* Parent Wrapper Utama */
@@ -18,12 +20,19 @@ export default function Home() {
         </p>
 
         <div className="flex gap-4">
-          <button className="bg-sync-teal text-slate-950 px-8 py-3.5 rounded-lg font-bold text-lg transition-all hover:opacity-90 hover:shadow-[0_0_30px_rgba(20,184,166,0.3)]">
+          <Link 
+            href="/contact" 
+            className="bg-sync-teal text-slate-950 px-8 py-3.5 rounded-lg font-bold text-lg transition-all hover:opacity-90 hover:shadow-[0_0_30px_rgba(20,184,166,0.3)] inline-block text-center"
+          >
             Get Started
-          </button>
-          <button className="border border-slate-700 text-slate-50 px-8 py-3.5 rounded-lg font-bold text-lg hover:bg-slate-800/50 transition-all">
+          </Link>
+
+          <Link 
+            href="/about" 
+            className="border border-slate-700 text-slate-50 px-8 py-3.5 rounded-lg font-bold text-lg hover:bg-slate-800/50 transition-all inline-block text-center"
+          >
             Learn More
-          </button>
+          </Link>
         </div>
       </section>
 
