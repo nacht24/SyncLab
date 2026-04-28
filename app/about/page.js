@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function About() {
   const [text, setText] = useState("");
@@ -71,8 +72,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* SERVICE CARDS (3 Stacked Cards with Focus Effect) */}
-          {/* Desktop: Stacked absolute cards */}
+          {/* SERVICE CARDS — Desktop */}
           <div className="flex-1 relative mt-4 h-full hidden md:block">
             <div className="absolute inset-0 flex items-center justify-center -translate-y-4">
                 
@@ -131,7 +131,6 @@ export default function About() {
 
           {/* Mobile: Horizontal scrollable cards */}
           <div className="flex md:hidden gap-3 mt-4 overflow-x-auto pb-2 -mx-2 px-2">
-            {/* CARD 1: WEB DEV */}
             <div className="flex-shrink-0 w-36 p-3 bg-slate-800 border border-slate-600 rounded-xl">
               <div className="flex gap-1 mb-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-red-500/50"></div>
@@ -144,8 +143,6 @@ export default function About() {
               </div>
               <div className="mt-3 text-[9px] font-bold text-slate-300">WEB_DEV</div>
             </div>
-
-            {/* CARD 2: UI/UX */}
             <div className="flex-shrink-0 w-40 p-4 bg-slate-950 border border-sync-teal/30 rounded-xl">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-sync-teal to-sync-emerald"></div>
@@ -159,8 +156,6 @@ export default function About() {
                 DESIGN_LAB
               </div>
             </div>
-
-            {/* CARD 3: ANALYTICS */}
             <div className="flex-shrink-0 w-36 p-3 bg-slate-700 border border-slate-900 rounded-xl">
               <div className="flex items-end gap-1 h-5 mb-3">
                 <div className="w-1.5 bg-slate-800 h-2/3 rounded-t"></div>
@@ -194,108 +189,96 @@ export default function About() {
       </div>
 
       {/* SECTION 3: SYSTEM ARCHITECTS (The Team) */}
-        <div className="mt-20 md:mt-32 relative">
+      <div className="mt-20 md:mt-32 relative">
         <div className="text-center mb-10 md:mb-16">
-            <span className="text-sync-teal text-[10px] font-mono font-bold uppercase tracking-[0.5em] mb-4 block">Personnel_Access</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-50 uppercase tracking-tighter">Core System <span className="text-sync-emerald">Architects</span></h2>
+          <span className="text-sync-teal text-[10px] font-mono font-bold uppercase tracking-[0.5em] mb-4 block">Personnel_Access</span>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-50 uppercase tracking-tighter">Core System <span className="text-sync-emerald">Architects</span></h2>
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            {/* BADGE 1: HAMZAH (Chairman) */}
-            <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:border-sync-teal/50 transition-all duration-500 shadow-xl">
-            {/* Hologram Overlay Effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-sync-teal/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-sync-teal/10 blur-[50px] rounded-full"></div>
-            
-            {/* Header Badge */}
-            <div className="flex justify-between items-start mb-6 md:mb-8">
+
+          {/* BADGE 1: HAMZAH — dibungkus Link */}
+          <Link href="/team/1" className="block group">
+            <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 md:p-8 relative overflow-hidden hover:border-sync-teal/50 transition-all duration-500 shadow-xl h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-sync-teal/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-sync-teal/10 blur-[50px] rounded-full"></div>
+              <div className="flex justify-between items-start mb-6 md:mb-8">
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center group-hover:border-sync-teal/50 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
                 <div className="text-right">
-                <span className="text-[10px] font-mono text-sync-teal block font-bold">LEVEL: OMEGA</span>
-                <span className="text-[9px] font-mono text-slate-600 block">CLEARANCE_AUTH</span>
+                  <span className="text-[10px] font-mono text-sync-teal block font-bold">LEVEL: OMEGA</span>
+                  <span className="text-[9px] font-mono text-slate-600 block">CLEARANCE_AUTH</span>
                 </div>
-            </div>
-
-            {/* Info Group */}
-            <div className="space-y-1 mb-6 md:mb-8">
+              </div>
+              <div className="space-y-1 mb-6 md:mb-8">
                 <h3 className="text-lg md:text-xl font-black text-slate-50 leading-tight uppercase tracking-tight">Hamzah Permata Putra</h3>
                 <p className="text-sync-emerald text-xs font-mono font-medium">Lead System Architect</p>
-            </div>
-
-            {/* Footer Badge (Metadata) */}
-            <div className="pt-4 md:pt-6 border-t border-slate-800/50 flex justify-between items-end">
+              </div>
+              <div className="pt-4 md:pt-6 border-t border-slate-800/50 flex justify-between items-end">
                 <div className="space-y-1">
-                <span className="text-[8px] font-mono text-slate-600 block uppercase">Group_Assignment</span>
-                <span className="text-[11px] font-mono text-slate-300 font-bold">LEADER_KELOMPOK_5</span>
+                  <span className="text-[8px] font-mono text-slate-600 block uppercase">Group_Assignment</span>
+                  <span className="text-[11px] font-mono text-slate-300 font-bold">LEADER_KELOMPOK_5</span>
                 </div>
-                <div className="w-10 h-10 bg-slate-950 rounded border border-slate-800 p-1.5 opacity-50">
-                {/* Fake Barcode/QR Pattern */}
-                <div className="grid grid-cols-3 gap-0.5 h-full">
-                    {[...Array(9)].map((_, i) => <div key={i} className={`bg-slate-700 ${i % 2 === 0 ? 'opacity-100' : 'opacity-30'}`}></div>)}
-                </div>
-                </div>
+                <span className="text-[10px] font-mono text-sync-teal opacity-0 group-hover:opacity-100 transition-opacity">VIEW →</span>
+              </div>
             </div>
-            </div>
+          </Link>
 
-            {/* BADGE 2: ANGGARA */}
-            <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:border-slate-500/50 transition-all duration-500 shadow-xl">
-            <div className="flex justify-between items-start mb-6 md:mb-8">
+          {/* BADGE 2: ANGGARA — dibungkus Link */}
+          <Link href="/team/2" className="block group">
+            <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 md:p-8 relative overflow-hidden hover:border-slate-500/50 transition-all duration-500 shadow-xl h-full">
+              <div className="flex justify-between items-start mb-6 md:mb-8">
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                 </div>
                 <div className="text-right">
-                <span className="text-[10px] font-mono text-slate-400 block font-bold">LEVEL: ALPHA</span>
-                <span className="text-[9px] font-mono text-slate-600 block">CORE_MEMBER</span>
+                  <span className="text-[10px] font-mono text-slate-400 block font-bold">LEVEL: ALPHA</span>
+                  <span className="text-[9px] font-mono text-slate-600 block">CORE_MEMBER</span>
                 </div>
-            </div>
-            <div className="space-y-1 mb-6 md:mb-8">
+              </div>
+              <div className="space-y-1 mb-6 md:mb-8">
                 <h3 className="text-lg md:text-xl font-black text-slate-200 leading-tight uppercase tracking-tight">Muhamad Anggara Ramadhan</h3>
                 <p className="text-slate-500 text-xs font-mono font-medium">Full-Stack Engineer</p>
-            </div>
-            <div className="pt-4 md:pt-6 border-t border-slate-800/50 flex justify-between items-end">
+              </div>
+              <div className="pt-4 md:pt-6 border-t border-slate-800/50 flex justify-between items-end">
                 <div className="space-y-1">
-                <span className="text-[8px] font-mono text-slate-600 block uppercase">Group_Assignment</span>
-                <span className="text-[11px] font-mono text-slate-400">MEMBER_KELOMPOK_5</span>
+                  <span className="text-[8px] font-mono text-slate-600 block uppercase">Group_Assignment</span>
+                  <span className="text-[11px] font-mono text-slate-400">MEMBER_KELOMPOK_5</span>
                 </div>
-                <div className="w-10 h-10 bg-slate-950 rounded border border-slate-800 p-1.5 opacity-30">
-                <div className="grid grid-cols-2 gap-1 h-full">
-                    {[...Array(4)].map((_, i) => <div key={i} className="bg-slate-700"></div>)}
-                </div>
-                </div>
+                <span className="text-[10px] font-mono text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity">VIEW →</span>
+              </div>
             </div>
-            </div>
+          </Link>
 
-            {/* BADGE 3: MURFID */}
-            <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:border-slate-500/50 transition-all duration-500 shadow-xl">
-            <div className="flex justify-between items-start mb-6 md:mb-8">
+          {/* BADGE 3: MURFID — dibungkus Link */}
+          <Link href="/team/3" className="block group">
+            <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 md:p-8 relative overflow-hidden hover:border-slate-500/50 transition-all duration-500 shadow-xl h-full">
+              <div className="flex justify-between items-start mb-6 md:mb-8">
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                 </div>
                 <div className="text-right">
-                <span className="text-[10px] font-mono text-slate-400 block font-bold">LEVEL: ALPHA</span>
-                <span className="text-[9px] font-mono text-slate-600 block">CORE_MEMBER</span>
+                  <span className="text-[10px] font-mono text-slate-400 block font-bold">LEVEL: ALPHA</span>
+                  <span className="text-[9px] font-mono text-slate-600 block">CORE_MEMBER</span>
                 </div>
-            </div>
-            <div className="space-y-1 mb-6 md:mb-8">
+              </div>
+              <div className="space-y-1 mb-6 md:mb-8">
                 <h3 className="text-lg md:text-xl font-black text-slate-200 leading-tight uppercase tracking-tight">Murfid Muhyiddin</h3>
                 <p className="text-slate-500 text-xs font-mono font-medium">UI/UX Specialist</p>
-            </div>
-            <div className="pt-4 md:pt-6 border-t border-slate-800/50 flex justify-between items-end">
+              </div>
+              <div className="pt-4 md:pt-6 border-t border-slate-800/50 flex justify-between items-end">
                 <div className="space-y-1">
-                <span className="text-[8px] font-mono text-slate-600 block uppercase">Group_Assignment</span>
-                <span className="text-[11px] font-mono text-slate-400">MEMBER_KELOMPOK_5</span>
+                  <span className="text-[8px] font-mono text-slate-600 block uppercase">Group_Assignment</span>
+                  <span className="text-[11px] font-mono text-slate-400">MEMBER_KELOMPOK_5</span>
                 </div>
-                <div className="w-10 h-10 bg-slate-950 rounded border border-slate-800 p-1.5 opacity-30">
-                <div className="grid grid-cols-2 gap-1 h-full">
-                    {[...Array(4)].map((_, i) => <div key={i} className="bg-slate-700"></div>)}
-                </div>
-                </div>
+                <span className="text-[10px] font-mono text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity">VIEW →</span>
+              </div>
             </div>
-            </div>
+          </Link>
+
         </div>
-        </div>
+      </div>
 
     </div>
   );

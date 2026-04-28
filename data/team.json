@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Hamzah Permata Putra",
+    "role": "Lead System Architect",
+    "level": "OMEGA",
+    "clearance": "LEADER_KELOMPOK_5",
+    "bio": "Visioner di balik arsitektur sistem SyncLab. Hamzah merancang fondasi teknis yang memastikan setiap produk berjalan dengan presisi dan skalabilitas tinggi.",
+    "skills": ["System Architecture", "Next.js", "PostgreSQL", "DevOps"],
+    "status": "ONLINE"
+  },
+  {
+    "id": 2,
+    "name": "Muhamad Anggara Ramadhan",
+    "role": "Full-Stack Engineer",
+    "level": "ALPHA",
+    "clearance": "MEMBER_KELOMPOK_5",
+    "bio": "Engineer serba bisa yang menjembatani frontend dan backend. Anggara memastikan setiap fitur berjalan seamless dari sisi klien hingga server.",
+    "skills": ["React", "Node.js", "Tailwind CSS", "REST API"],
+    "status": "ONLINE"
+  },
+  {
+    "id": 3,
+    "name": "Murfid Muhyiddin",
+    "role": "UI/UX Specialist",
+    "level": "ALPHA",
+    "clearance": "MEMBER_KELOMPOK_5",
+    "bio": "Arsitek pengalaman pengguna SyncLab. Murfid mengubah kompleksitas teknis menjadi antarmuka yang intuitif dan estetis melalui riset mendalam.",
+    "skills": ["Figma", "User Research", "Prototyping", "Design Systems"],
+    "status": "ONLINE"
+  }
+]

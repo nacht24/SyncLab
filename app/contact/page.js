@@ -1,7 +1,25 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async () => {
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus("error");
+      return;
+    }
+    setStatus("loading");
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    setStatus("success");
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  };
+
   return (
     <div className="max-w-6xl mx-auto py-16 md:py-24 px-4 sm:px-6 relative">
       
@@ -67,13 +85,16 @@ export default function Contact() {
             <span className="text-[10px] font-mono text-sync-teal tracking-widest uppercase">Encrypted_Channel</span>
           </div>
 
-          <form className="space-y-6 mt-4">
+          <div className="space-y-6 mt-4">
             <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
               {/* Input: Name */}
               <div className="space-y-2">
                 <label className="text-[11px] font-mono text-slate-500 uppercase tracking-widest">Client_ID [Name]</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="John Doe"
                   className="w-full bg-slate-900/50 border border-slate-800 rounded-xl px-5 py-4 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-sync-teal focus:ring-1 focus:ring-sync-teal transition-all"
                 />
@@ -81,8 +102,11 @@ export default function Contact() {
               {/* Input: Email */}
               <div className="space-y-2">
                 <label className="text-[11px] font-mono text-slate-500 uppercase tracking-widest">Return_Address [Email]</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="john@company.com"
                   className="w-full bg-slate-900/50 border border-slate-800 rounded-xl px-5 py-4 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-sync-teal focus:ring-1 focus:ring-sync-teal transition-all"
                 />
@@ -92,8 +116,11 @@ export default function Contact() {
             {/* Input: Subject */}
             <div className="space-y-2">
               <label className="text-[11px] font-mono text-slate-500 uppercase tracking-widest">Project_Variable [Subject]</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
                 placeholder="Web Revamp / UI/UX Design"
                 className="w-full bg-slate-900/50 border border-slate-800 rounded-xl px-5 py-4 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-sync-teal focus:ring-1 focus:ring-sync-teal transition-all"
               />
@@ -102,22 +129,50 @@ export default function Contact() {
             {/* Input: Message */}
             <div className="space-y-2">
               <label className="text-[11px] font-mono text-slate-500 uppercase tracking-widest">Data_Payload [Message]</label>
-              <textarea 
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows="5"
                 placeholder="Deskripsikan kompleksitas ide Anda di sini..."
                 className="w-full bg-slate-900/50 border border-slate-800 rounded-xl px-5 py-4 text-slate-200 placeholder-slate-600 focus:outline-none focus:border-sync-teal focus:ring-1 focus:ring-sync-teal transition-all resize-none"
               ></textarea>
             </div>
 
+            {/* Error Message */}
+            {status === "error" && (
+              <p className="text-red-400 text-xs font-mono tracking-widest uppercase">
+                ⚠ Error: Mohon isi field nama, email, dan pesan.
+              </p>
+            )}
+
+            {/* Success Message */}
+            {status === "success" && (
+              <p className="text-sync-emerald text-xs font-mono tracking-widest uppercase">
+                ✓ Transmisi berhasil. Tim kami akan segera merespons.
+              </p>
+            )}
+
             {/* Submit Button */}
-            <button 
+            <button
               type="button"
-              className="w-full bg-gradient-to-r from-sync-teal to-sync-emerald text-slate-950 font-black text-sm uppercase tracking-widest py-4 rounded-xl hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] hover:scale-[1.02] transition-all duration-300 flex justify-center items-center gap-3"
+              onClick={handleSubmit}
+              disabled={status === "loading"}
+              className="w-full bg-gradient-to-r from-sync-teal to-sync-emerald text-slate-950 font-black text-sm uppercase tracking-widest py-4 rounded-xl hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] hover:scale-[1.02] transition-all duration-300 flex justify-center items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              <span>Transmit Data</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              {status === "loading" ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin"></div>
+                  <span>Transmitting...</span>
+                </>
+              ) : (
+                <>
+                  <span>Transmit Data</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </>
+              )}
             </button>
-          </form>
+          </div>
         </div>
 
       </div>
